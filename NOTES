@@ -1,0 +1,84 @@
+Directives are simply instructions.
+
+
+
+1.
+Interacting with the DOM
+Out put data in different ways
+Listen to events and match two javascript.
+
+2.
+Vue instance
+
+
+3.
+vue CLI 
+
+4.
+components
+Applications are build from components
+Reuserble parts containing templates
+Communication betwen the components
+
+5. 
+Forms
+Inputs/different form elements/Form control
+
+6. 
+Directives
+
+
+7.
+Animations and Transitions
+
+8
+Accessing the http
+
+SINGLE PAGE APPLICATION:
+Is a web application or website that interacts with the 
+web browser by dynamically rewrting the current web page 
+with new data from the web server
+
+9.
+Routing 
+
+
+10.
+state management
+
+
+
+
+
+
+
+
+
+DOM INTERACTION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

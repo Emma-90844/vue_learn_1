@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <!-- v-on then ad  event  -->
+        <button v-on:click="increase">ADD</button><br>
+        <button v-on:click="decrease">SUB</button>
+        <p>{{ counter }}</p>
+    </div> 
+
+  <!--Instantiating vue library  -->
+  <script>
+      new Vue({
+          //vue objectgle
+          el: '#app',
+          data: {
+            counter: 0,
+
+          },
+          methods: {
+              increase: function() {
+                  this.counter++;
+              },
+              decrease: function() {
+                  this.counter--;
+              }
+          }             
+      });
+  </script>
+</body>
+</html>

@@ -10,21 +10,32 @@
 <body>
     <div id="app">
      <input type="text" v-on:input="changeTitle">
-     <p>{{ title }}</p>
+     <h2>{{ title }}</h2>
+
+     <p>{{ sayHello() }} - <a v-bind:href="link">Visit Refactory Uganda</a></p>
+     <p v-html="finishedLink"></p>
     </div> 
 
   <!--Instantiating vue library  -->
   <script>
       new Vue({
-          //vue object
+          //vue objectgle
           el: '#app',
           data: {
-            title: 'Hello'
+            title: 'Dear Leaders!',
+            link:'http://refactory.ug',
+            finishedLink: '<a href="http://google.com">Google</a>'
           },   
           methods: {
            changeTitle: function(event) {
+               
                this.title = event.target.value
+           },
+           sayHello: function(){
+              
+               return this.title
            }
+           
           }      
       });
   </script>
