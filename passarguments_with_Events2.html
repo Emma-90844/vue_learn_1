@@ -1,0 +1,47 @@
+<!-- Incase you want an increment by 2 on button click
+ ,pass argumnet on the increase eg increase(2) in the html...
+inside vue insatnce to the counter method instead <+ = step>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--  $event variable as a second argument-->
+        <button v-on:click="increase(2, $event)">ADD</button><br>
+        <p> {{ counter }}</p>
+        <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+    </div> 
+
+  <!--Instantiating vue library  -->
+  <script>
+    new Vue({
+        //vue objectgle
+        el: '#app',
+        data: {
+          counter: 0,
+            x: 0,
+            y:0,
+        },
+   // pass step as an argument in the function and on accesed property
+   //<+=>
+        methods: {
+            // passing automatically created object(event) as a second argument
+            increase: function(step, event) {
+                this.counter += step;
+            },
+            updateCoordinates: function(event){
+              this.x = event.clientX
+              this.y = event.clientY
+            }
+
+        }             
+    });
+</script>
+</body>
+</html>
