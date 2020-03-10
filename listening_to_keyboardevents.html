@@ -1,0 +1,63 @@
+<!-- EVENT MODIFIERS
+Added an input field with keyup event
+Added modifierslike .enter that is on enter
+and .space ......lisened to on entry of data inside 
+the input field-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <!-- dummy variable added to the span , function stop propagation to the vue instance -->
+        <button v-on:click="increase(2, $event)">ADD</button><br>
+        <p> {{ counter }}</p>
+        <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
+            <span v-on:mousemove = "dummy">DEAD SPOT</span>
+
+            <!-- .stop without executing variable(dummy) same results -->
+            <!--  -->
+            <span v-on:mousemove.stop = "">DEAD SPOT</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMe">
+    </div> 
+
+  <!--Instantiating vue library  -->
+  <script>
+    new Vue({
+        //vue objectgle
+        el: '#app',
+        data: {
+          counter: 0,
+            x: 0,
+            y:0,
+        },
+   // pass step as an argument in the function and on accesed property
+   //<+=>
+        methods: {
+            // passing automatically created object(event) as a second argument
+            increase: function(step, event) {
+                this.counter += step;
+            },
+            updateCoordinates: function(event){
+              this.x = event.clientX
+              this.y = event.clientY
+            },
+            dummy: function(event){
+                event.stopPropagation();
+            },
+            // 
+            alertMe: function (){
+                alert('No space in betwwen text')
+            }
+
+        }             
+    });
+</script>
+</body>
+</html>
