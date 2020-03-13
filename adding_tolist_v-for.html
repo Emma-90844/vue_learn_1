@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue tutorial</title>
-   
+    <title>Vue tutorial</title> 
     <script src="/js/vue.js"></script> 
 </head>
 <body>
     <div id="app">
        <ul>
            <li v-for="(ingredient, i) in ingredients"> {{ ingredient }} ({{ i }})</li>
-       </ul>
-    
+       </ul> 
       <button v-on:click="ingredients.push('spices')">Add New</button>
     </div> 
 
@@ -24,10 +22,8 @@
         el: '#app',
         data: {
           ingredients: ['pork', 'onions','cooking oil', 'lemon'],
-          fruits: ['apple', 'oranges', 'mongoes']
-          
+          fruits: ['apple', 'oranges', 'mongoes']          
         },
-      
     });
 </script>
 </body>
