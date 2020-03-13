@@ -1,0 +1,73 @@
+<!--Watch method works when computed! advised! does not support 
+asyncronous actios
+-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Vue tutorial</title>
+    
+     <script src="/js/vue.js"></script>
+ </head>
+ <body>
+     <div id="app">
+         <!-- <button v-on:click="increase">Increase</button><br>
+         <button v-on:click="decrease">Decrease</button><br> -->
+ 
+         <button v-on:click="counter++">Increase</button>
+         <button v-on:click="counter--">Decrease</button> 
+         <button v-on:click="secondCounter++">Increase Second</button> 
+         <p> Counter: {{ counter }} || {{ secondCounter }}</p>
+         <p>  Result: {{ result() }} || {{ output}}</p>
+          
+     </div> 
+  
+   <!--Instantiating vue library  -->
+   <script>
+     new Vue({
+         //vue objectgle
+         el: '#app',
+         data: {
+           counter: 0,
+           secondCounter: 0
+             // result: ''          
+         },
+         //Compted object/object runs synchronously
+         computed: {
+             output: function(){
+                 return this.counter > 5 ? 'Greter than 5' : 'Smaller than 5'
+             }
+         },
+         watch: {
+             //Async function that watches watches time out
+            counter: function(value){
+                var vm = this;
+
+                setTimeout( function(){
+                    vm.counter = 0
+                }, 3000);
+            }
+         },
+ // pass step as an argument in the function and on accesed property
+ //<+=>
+         methods: {
+             //Instead we made results to be a function
+             result(){
+                 return this.counter > 5 ?'Greater than 5' : 'Smaller than 5'
+             }
+ 
+             //This could be the normal way of doing it
+            /* increase: function() {
+                 this.counter++;
+                 this.result = this.counter > 5 ? 'greater 5' : 'Smaller 5'
+             },
+             decrease: function() {
+                 this.counter--;
+                 this.result = this.counter > 5 ? 'greater 5' : 'Smaller 5'
+             }*/
+         }             
+     });
+ </script>
+ </body>
+ </html>

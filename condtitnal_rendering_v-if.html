@@ -1,0 +1,33 @@
+<!-- v-if is a directive that can be added to any paragraph or elememt.It allows
+     binding to any property or condition -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <p >Question: What is the capital city of uganda</p>
+       <p v-if="show"><a href="">Try hint</a></p>
+       <p v-else>Answer: Kampala</p>
+       <button v-on:click="show = !show"> See Answer </button>
+    </div> 
+
+  <!--Instantiating vue library  -->
+  <script>
+    new Vue({
+        //vue objectgle
+        el: '#app',
+        data: {
+          show: false,
+          
+        },
+      
+    });
+</script>
+</body>
+</html>

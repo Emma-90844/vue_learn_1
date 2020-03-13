@@ -1,0 +1,33 @@
+<!-- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <h5>TWO WAY DATA BINDING</h5>
+    <div id="app">
+        <!-- v-model will listen to any changes and update it automatically -->
+        <!--  v-model directive hepls vue set up a two way data binding -->
+        <input type="text"  v-model="name">
+      <p>  {{ name }} You are logged in</p>
+    </div> 
+
+  <!--Instantiating vue library  -->
+  <script>
+    new Vue({
+       
+        el: '#app',
+        data: {
+         name : ''
+        
+      
+        }             
+    });
+</script>
+</body>
+</html>

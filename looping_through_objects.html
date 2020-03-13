@@ -1,0 +1,59 @@
+<!--LUsing the for directive and looping in vue js-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   
+    <script src="/js/vue.js"></script> 
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <h5>Fruits</h5>
+            <li v-for="fruit in fruits">{{ fruit }}</li>
+
+            <h5>Ingredients</h5>
+            <li v-for="(ingredient, i) in ingredients"> {{ ingredient }} ({{i}})</li>
+        </ul>
+        <!-- Lopping through propertise of objects -->
+        <hr>
+            <ul>
+                <li v-for="person in persons"> {{ person.name }}</li>
+               
+            <!-- lopping through propertise of objects -->
+                <li v-for="person in persons"> 
+                    <span v-for="value in person">{{ value }}</span>
+                </li>
+               
+            
+            </ul>
+
+            <!-- Looping through of numbers -->
+            <span v-for="n in 10">{{ n }}</span>
+
+
+        <hr>
+        
+      
+    </div> 
+
+  <!--Instantiating vue library  -->
+  <script>
+    new Vue({
+        //vue objectgle
+        el: '#app',
+        data: {
+          ingredients: ['pork', 'onions','cooking oil', 'lemon'],
+          fruits: ['apple', 'oranges', 'mongoes'],
+          persons: [
+              {name: 'Defoe', age: 43, gender: 'Male'},
+              {name: 'Sarah', age: 33, gender: 'male'}
+              ]
+        },
+      
+    });
+</script>
+</body>
+</html>

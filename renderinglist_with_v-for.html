@@ -1,0 +1,43 @@
+<!--LUsing the for directive and looping in vue js-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   
+    <script src="/js/vue.js"></script> 
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <h5>Fruits</h5>
+            <li v-for="fruit in fruits">{{ fruit }}</li>
+
+            <h5>Ingredients</h5>
+            <li v-for="(ingredient, i) in ingredients"> {{ ingredient }} ({{i}})</li>
+        </ul>
+        <!-- Or you could simple have a template rending headings -->
+        <template>
+            <h1 v-for="(ingredient, index) in ingredients"> {{ ingredient }}</h1>
+            <p> {{ index }}</p>
+        </template>
+       
+      
+    </div> 
+
+  <!--Instantiating vue library  -->
+  <script>
+    new Vue({
+        //vue objectgle
+        el: '#app',
+        data: {
+          ingredients: ['pork', 'onions','cooking oil', 'lemon'],
+          fruits: ['apple', 'oranges', 'mongoes']
+          
+        },
+      
+    });
+</script>
+</body>
+</html>

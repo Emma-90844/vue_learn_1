@@ -1,11 +1,11 @@
 Directives are simply instructions.
-
-
+v-on event can simply be writen as @click for v-on:click
+v-model:"" can simply be writen as :"then variavle here"
 
 1.
 Interacting with the DOM
 Out put data in different ways
-Listen to events and match two javascript.
+Listen to events and match to javascript.
 
 2.
 Vue instance
@@ -25,7 +25,8 @@ Forms
 Inputs/different form elements/Form control
 
 6. 
-Directives
+Directives:
+v-module directives tells vue to set up a two way data model
 
 
 7.

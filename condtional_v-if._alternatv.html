@@ -1,0 +1,39 @@
+<!--templates doesnt get rendered in the dom 
+No wrapping template element exist when inspwected in the console
+Template groupd elements for multiple efeect to added at once
+a div can be an alternative , but: div effects!! not cool-->
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Vue tutorial</title>
+        
+         <script src="/js/vue.js"></script> 
+     </head>
+     <body>
+         <div id="app">
+            <p v-if="show">You can see me</p>
+            <tenplate v-if="show">
+                <h1>Heading</h1>
+                <p>Inside the template</p>
+            </tenplate>
+            <p v-else >Now you see me</p>
+            
+            <button v-on:click="show = !show"> Switch</button>
+         </div> 
+     
+       <!--Instantiating vue library  -->
+       <script>
+         new Vue({
+             //vue objectgle
+             el: '#app',
+             data: {
+               show: true,
+               
+             },
+           
+         });
+     </script>
+     </body>
+     </html>
