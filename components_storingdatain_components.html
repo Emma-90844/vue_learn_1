@@ -1,0 +1,55 @@
+<!-- 
+Components are reuserble piece of the vue instance
+creates your own html element(tag) and allows usage
+anywhere in the html file 
+propertise are enclosed in a file-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   <link rel="stylesheet" href="/demo.css">
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+      <my-cmp></my-cmp>
+        <hr>
+        <my-cmp></my-cmp>
+    </div>
+  
+  <script>
+//Storing data in components(shared memory)
+// var data = { status: 'Critical'}
+
+
+
+//Vue Componet
+    Vue.component('my-cmp', {
+        //Return data
+        data: function(){
+            // return data
+            return {
+                status: 'Critical'
+            }
+            },
+            template: ' <p>Server Status: {{ status }} (<button v-on:click="changeStatus">Change</button>)</p> ',
+            methods: {
+                changeStatus: function(){
+                    this.status = 'Normal';
+                }
+            }  
+    });
+
+//Instantiating vue Library
+    new Vue({
+        
+        el: '#app',
+        data: {
+        
+        },            
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- Attach css classes-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue tutorial</title>
+   <link rel="stylesheet" href="/demo.css">
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }} {{ name }}</h1>
+        <button v-on:click="show">Show Paragraph</button>
+        <p v-if="showParagraph">This is not always visible</p>
+     </div>
+
+  <!--Instantiating vue library  -->
+  <script>
+    new Vue({
+        
+        el: '#app',
+        data: {
+        title: 'The vuejs Instance',
+        name: '',
+        showParagraph: false     
+        },
+        methods: {
+        show: function(){
+            this.showParagraph = true;
+            this.updateTitle('The VueJs Instance (Updated)');
+            this.addname('Mark')
+        },
+        updateTitle: function(title){
+            this.title = title;
+        },
+       computed: {
+           lowercaseTitle: function(){
+               return this.title.lowerCase();
+           }
+       },
+       watch: {
+           titile: 
+       }
+
+
+        }             
+    });
+</script>
+</body>
+</html>

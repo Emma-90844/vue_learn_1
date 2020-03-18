@@ -1,3 +1,19 @@
+WEBPARK AND VUE CLI
+Note that vue js runs on the client but the app will be
+served by a server. So we use a fininsed light weight 
+developement server 
+
+
+
+
+
+
+
+Accessing anather in satnce from anather instance
+
+
+
+
 Directives are simply instructions.
 v-on event can simply be writen as @click for v-on:click
 v-model:"" can simply be writen as :"then variavle here"
