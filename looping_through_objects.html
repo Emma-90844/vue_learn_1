@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue tutorial</title>
-   
+    <title>Vue tutorial</title>  
     <script src="/js/vue.js"></script> 
 </head>
 <body>
@@ -13,15 +12,13 @@
         <ul>
             <h5>Fruits</h5>
             <li v-for="fruit in fruits">{{ fruit }}</li>
-
             <h5>Ingredients</h5>
             <li v-for="(ingredient, i) in ingredients"> {{ ingredient }} ({{i}})</li>
         </ul>
         <!-- Lopping through propertise of objects -->
         <hr>
             <ul>
-                <li v-for="person in persons"> {{ person.name }}</li>
-               
+                <li v-for="person in persons"> {{ person.name }}</li>           
             <!-- lopping through propertise of objects -->
                 <li v-for="person in persons"> 
                     <span v-for="value in person">{{ value }}</span>
@@ -29,14 +26,9 @@
                
             
             </ul>
-
             <!-- Looping through of numbers -->
             <span v-for="n in 10">{{ n }}</span>
-
-
-        <hr>
-        
-      
+        <hr>   
     </div> 
 
   <!--Instantiating vue library  -->
@@ -52,7 +44,6 @@
               {name: 'Sarah', age: 33, gender: 'male'}
               ]
         },
-      
     });
 </script>
 </body>
