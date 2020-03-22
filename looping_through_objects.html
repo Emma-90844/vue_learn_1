@@ -18,19 +18,17 @@
         <!-- Lopping through propertise of objects -->
         <hr>
             <ul>
-                <li v-for="person in persons"> {{ person.name }}</li>           
+                <li v-for="person in persons"> {{ person.name }}</li> 
+                
             <!-- lopping through propertise of objects -->
                 <li v-for="person in persons"> 
                     <span v-for="value in person">{{ value }}</span>
-                </li>
-               
-            
+                </li>          
             </ul>
             <!-- Looping through of numbers -->
             <span v-for="n in 10">{{ n }}</span>
         <hr>   
     </div> 
-
   <!--Instantiating vue library  -->
   <script>
     new Vue({
